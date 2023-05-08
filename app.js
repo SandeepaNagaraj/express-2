@@ -1,0 +1,15 @@
+const express =require('express')
+const app =express()
+const aboutPage=require('./aboutUS')
+const servicepage=require('./services')
+const constactpage=require('./contactUS')
+const loginPage=require('./login')
+app.get('/',(request,response) =>{
+    response.send("Welcome to sandeepa's home page")
+  })
+ 
+app.use('/services',servicepage)
+app.use('/about',aboutPage)
+app.use('/contact',constactpage)
+app.use('/login',loginPage)
+  app.listen(3800)
